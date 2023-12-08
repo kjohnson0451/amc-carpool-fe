@@ -28,6 +28,13 @@ body {
   margin: 0;
   min-width: 320px;
   height: calc(100vh - 3rem);
+  transition: height 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  body {
+    height: 100vh;
+  }
 }
 
 h1 {
