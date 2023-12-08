@@ -26,9 +26,8 @@ a:hover {
 
 body {
   margin: 0;
-  padding: 2rem 2rem 1rem 2rem;
   min-width: 320px;
-  min-height: calc(100vh - 3rem);
+  height: calc(100vh - 3rem);
 }
 
 h1 {

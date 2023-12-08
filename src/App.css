@@ -1,5 +1,6 @@
 #root {
   background-color: #242424;
+  margin: 2rem 2rem 1rem 2rem;
   padding: 1rem;
   text-align: center;
   min-height: calc(100% - 2rem);
