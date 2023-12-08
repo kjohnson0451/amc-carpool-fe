@@ -5,4 +5,11 @@ import react from "@vitejs/plugin-react"
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      "@pages": "/src/pages",
+      "@ui": "/src/ui",
+      // Add more aliases as needed
+    },
+  },
 })

@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Trips from "./pages/Trips"
-import PageNotFound from "./pages/PageNotFound"
+import Trips from "@pages/Trips"
+import PageNotFound from "@pages/PageNotFound"
 import "./App.css"
 
 function App() {
