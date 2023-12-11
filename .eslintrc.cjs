@@ -16,5 +16,6 @@ module.exports = {
     quotes: ["error", "double"],
     semi: ["error", "never"],
     "import/no-unresolved": "off",
+    "react/prop-types": "off",
   },
 }
