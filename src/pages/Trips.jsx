@@ -1,10 +1,14 @@
+import MainLayout from "@ui/MainLayout"
 import TripList from "@components/TripList"
 
 function Trips() {
+  const header = "All trips"
+
   return (
     <div>
-      <h2>All trips</h2>
-      <TripList />
+      <MainLayout header={header}>
+        <TripList />
+      </MainLayout>
     </div>
   )
 }
