@@ -4,7 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        mainlayout: "#1b1b1b",
+        "custom-gray-darkest": "#121212",
+        "custom-gray-dark": "#1b1b1b",
+        "custom-gray-light": "#242424",
+        "custom-gray-lightest": "#2d2d2d",
       },
       minHeight: {
         mainlayout: "calc(100vh - 8.6rem)",
