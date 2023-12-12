@@ -1,3 +1,4 @@
+import { format, parseISO } from "date-fns"
 import useTripData from "@hooks/useTripData"
 
 function TripList() {
@@ -25,10 +26,12 @@ function TripList() {
       <tbody className="divide-y divide-stone-600">
         {trips.map((trip) => (
           <tr key={trip.id} className="hover:bg-purple-900">
-            <td className="py-2 px-4">{trip.name}</td>
-            <td className="py-2 px-4">{trip.date}</td>
-            <td className="py-2 px-4">{trip.trailhead}</td>
-            <td className="py-2 px-4">{trip.totalParticipantCount}</td>
+            <td className="py-2 px-4">{trip?.name}</td>
+            <td className="py-2 px-4">
+              {trip?.date && format(parseISO(trip?.date), "dd/MM/yy")}
+            </td>
+            <td className="py-2 px-4">{trip?.trailhead}</td>
+            <td className="py-2 px-4">{trip?.totalParticipantCount}</td>
           </tr>
         ))}
       </tbody>
