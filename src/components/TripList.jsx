@@ -13,18 +13,26 @@ function TripList() {
   }
 
   return (
-    <ul>
-      {trips.map((trip, index) => (
-        <li
-          key={trip.id}
-          className={`py-2 px-4 ${
-            index % 2 === 0 ? "bg-custom-gray-light" : "bg-custom-gray-lightest"
-          } hover:bg-purple-900`}
-        >
-          {trip.name}
-        </li>
-      ))}
-    </ul>
+    <table className="min-w-full divide-y divide-stone-600">
+      <thead>
+        <tr>
+          <th className="py-2 px-4">Trip title</th>
+          <th className="py-2 px-4">Date</th>
+          <th className="py-2 px-4">Trailhead</th>
+          <th className="py-2 px-4">Number of Participants</th>
+        </tr>
+      </thead>
+      <tbody className="divide-y divide-stone-600">
+        {trips.map((trip) => (
+          <tr key={trip.id} className="hover:bg-purple-900">
+            <td className="py-2 px-4">{trip.name}</td>
+            <td className="py-2 px-4">{trip.date}</td>
+            <td className="py-2 px-4">{trip.trailhead}</td>
+            <td className="py-2 px-4">{trip.totalParticipantCount}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   )
 }
 
