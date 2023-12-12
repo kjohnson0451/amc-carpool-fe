@@ -1,9 +1,11 @@
 function MainLayout({ header, children }) {
   return (
-    <div>
+    <>
       <h2>{header}</h2>
-      {children}
-    </div>
+      <div className="border border-stone-600 rounded-md px-1 bg-mainlayout min-h-mainlayout max-[600px]:min-h-mainlayout-mobile">
+        {children}
+      </div>
+    </>
   )
 }
 

@@ -13,13 +13,11 @@ function TripList() {
   }
 
   return (
-    <div>
-      <ul>
-        {trips.map((trip) => (
-          <li key={trip.id}>{trip.name}</li>
-        ))}
-      </ul>
-    </div>
+    <ul>
+      {trips.map((trip) => (
+        <li key={trip.id}>{trip.name}</li>
+      ))}
+    </ul>
   )
 }
 

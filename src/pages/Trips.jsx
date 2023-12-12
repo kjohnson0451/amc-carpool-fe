@@ -5,11 +5,9 @@ function Trips() {
   const header = "All trips"
 
   return (
-    <div>
-      <MainLayout header={header}>
-        <TripList />
-      </MainLayout>
-    </div>
+    <MainLayout header={header}>
+      <TripList />
+    </MainLayout>
   )
 }
 

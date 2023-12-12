@@ -13,15 +13,14 @@
 
   body {
     min-width: 320px;
-    height: calc(100vh - 3rem);
-    transition: height 0.3s ease;
+    min-height: calc(100vh - 3rem);
   }
 }
 
 @layer components {
   @media (max-width: 600px) {
     body {
-      height: 100vh;
+      min-height: 100vh;
     }
   }
   a {
