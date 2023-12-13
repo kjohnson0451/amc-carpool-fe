@@ -1,4 +1,5 @@
 import { format, parseISO } from "date-fns"
+import pluralize from "pluralize"
 import useTripData from "@hooks/useTripData"
 
 function TripList() {
@@ -31,7 +32,12 @@ function TripList() {
               {trip?.date && format(parseISO(trip?.date), "dd/MM/yy")}
             </td>
             <td className="py-2 px-4">{trip?.trailhead}</td>
-            <td className="py-2 px-4">{trip?.totalParticipantCount}</td>
+            <td className="py-2 px-4">
+              {`${trip?.totalParticipantCount} ${pluralize(
+                "participant",
+                trip?.totalParticipantCount,
+              )}`}
+            </td>
           </tr>
         ))}
       </tbody>
