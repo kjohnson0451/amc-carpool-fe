@@ -1,6 +1,6 @@
 import { format, parseISO } from "date-fns"
-import pluralize from "pluralize"
 import useTripData from "@hooks/useTripData"
+import LabelValuePair from "@ui/LabelValuePair"
 
 function TripList() {
   useTripData()
@@ -15,33 +15,29 @@ function TripList() {
   }
 
   return (
-    <table className="min-w-full divide-y divide-stone-600">
-      <thead>
-        <tr>
-          <th className="py-2 px-4">Trip title</th>
-          <th className="py-2 px-4">Date</th>
-          <th className="py-2 px-4">Trailhead</th>
-          <th className="py-2 px-4">Number of Participants</th>
-        </tr>
-      </thead>
-      <tbody className="divide-y divide-stone-600">
-        {trips.map((trip) => (
-          <tr key={trip.id} className="hover:bg-purple-900">
-            <td className="py-2 px-4">{trip?.name}</td>
-            <td className="py-2 px-4">
-              {trip?.date && format(parseISO(trip?.date), "dd/MM/yy")}
-            </td>
-            <td className="py-2 px-4">{trip?.trailhead}</td>
-            <td className="py-2 px-4">
-              {`${trip?.totalParticipantCount} ${pluralize(
-                "participant",
-                trip?.totalParticipantCount,
-              )}`}
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <>
+      {trips.map((trip, index) => (
+        <div
+          className={`${
+            index !== 0 ? "mt-2" : ""
+          } grid grid-cols-2 gap-4 rounded-lg border border-gray-600 bg-custom-gray-darkest p-4 md:grid-cols-4`}
+          key={trip.id}
+        >
+          <div>
+            <p className="mr-3 inline-block font-semibold">Trip:</p>
+            <p className="link inline-block">{trip?.name}</p>
+          </div>
+          <LabelValuePair
+            value={trip?.date && format(parseISO(trip?.date), "dd/MM/yy")}
+          />
+          <LabelValuePair label="Trailhead" value={trip?.trailhead} />
+          <LabelValuePair
+            label="Number of participants"
+            value={trip?.totalParticipantCount}
+          />
+        </div>
+      ))}
+    </>
   )
 }
 

@@ -17,5 +17,7 @@ module.exports = {
     semi: ["error", "never"],
     "import/no-unresolved": "off",
     "react/prop-types": "off",
+    indent: ["error", 2, { SwitchCase: 1 }],
+    "react/jsx-one-expression-per-line": "off",
   },
 }

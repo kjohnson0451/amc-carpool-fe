@@ -18,20 +18,23 @@
 }
 
 @layer components {
-  @media (max-width: 600px) {
+  @media (max-width: 720px) {
     body {
       min-height: 100vh;
     }
   }
-  a {
+  a,
+  .link {
     font-weight: 500;
     color: #8a90ff;
     text-decoration: inherit;
+    cursor: pointer; /* Ensure pointer cursor for interaction */
   }
-  a:hover {
+
+  a:hover,
+  .link:hover {
     color: #797fff;
     text-decoration: underline;
-    cursor: pointer;
   }
 
   h1 {
@@ -47,30 +50,5 @@
   h3 {
     font-size: 24px;
     padding-bottom: 0.5rem;
-  }
-
-  button {
-    border-radius: 8px;
-    border: none;
-    padding: 0.5em 1em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    color: #242424;
-    background-color: #eeeeee;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  button:hover {
-    background-color: #d6d6d6;
-  }
-  button:focus,
-  button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
-
-  button:active {
-    transform: translate(2px, 2px);
-    box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.3);
   }
 }
