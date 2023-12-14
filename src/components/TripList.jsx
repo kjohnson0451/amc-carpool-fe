@@ -20,12 +20,14 @@ function TripList() {
         <div
           className={`${
             index !== 0 ? "mt-2" : ""
-          } grid grid-cols-2 gap-4 rounded-lg border border-gray-600 bg-custom-gray-darkest p-4 md:grid-cols-4`}
+          } hover:bg-custom-purple-dark group grid grid-cols-2 gap-4 rounded-lg border border-gray-600 bg-custom-gray-darkest p-4 hover:cursor-pointer md:grid-cols-4`}
           key={trip.id}
         >
           <div>
             <p className="mr-3 inline-block font-semibold">Trip:</p>
-            <p className="link inline-block">{trip?.name}</p>
+            <p className="group-hover:text-custom-purple-link-hover link inline-block group-hover:underline">
+              {trip?.name}
+            </p>
           </div>
           <LabelValuePair
             value={trip?.date && format(parseISO(trip?.date), "dd/MM/yy")}
