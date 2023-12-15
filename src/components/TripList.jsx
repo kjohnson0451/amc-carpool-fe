@@ -20,7 +20,7 @@ function TripList() {
         <div
           className={`${
             index !== 0 ? "mt-2" : ""
-          } hover:bg-custom-purple-dark border-stone-600 grid-cols-fr group grid grid-cols-2 gap-4 rounded-lg border bg-custom-gray-darkest p-4 hover:cursor-pointer md:grid-cols-4`}
+          } hover:bg-custom-purple-dark border-stone-600 grid-cols-fr group grid grid-cols-2 gap-4 rounded-lg border bg-custom-gray-darkest p-4 hover:cursor-pointer lg:grid-cols-4`}
           key={trip.id}
         >
           <div className="flex items-center gap-1.5">

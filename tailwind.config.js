@@ -11,6 +11,10 @@ export default {
         "custom-purple-dark": "#2e1a47",
         "custom-purple-link-hover": "#797fff",
       },
+      screens: {
+        sm: "320px",
+        md: "640px",
+      },
     },
   },
   plugins: [],
