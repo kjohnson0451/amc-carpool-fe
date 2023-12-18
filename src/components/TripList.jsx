@@ -1,6 +1,6 @@
 import { format, parseISO } from "date-fns"
+import pluralize from "pluralize"
 import useTripData from "@hooks/useTripData"
-import LabelValuePair from "@ui/LabelValuePair"
 
 function TripList() {
   useTripData()
@@ -20,23 +20,28 @@ function TripList() {
         <div
           className={`${
             index !== 0 ? "mt-2" : ""
-          } hover:bg-custom-purple-dark border-stone-600 grid-cols-fr group grid grid-cols-2 gap-4 rounded-lg border bg-custom-gray-darkest p-4 hover:cursor-pointer lg:grid-cols-4`}
+          } grid-cols-fr group grid grid-cols-[1fr_125px] gap-4 rounded-lg border border-stone-600 bg-custom-gray-darkest p-4 text-sm hover:cursor-pointer hover:bg-custom-purple-dark lg:grid-cols-[1fr_90px_1fr_125px]`}
           key={trip.id}
         >
-          <div className="flex items-center gap-1.5">
+          <div className="truncate">
             <span className="font-semibold">Trip:</span>
-            <span className="group-hover:text-custom-purple-link-hover link truncate group-hover:underline">
+            <span className="link ml-1 group-hover:text-custom-purple-link-hover group-hover:underline">
               {trip?.name}
             </span>
           </div>
-          <LabelValuePair
-            value={trip?.date && format(parseISO(trip?.date), "dd/MM/yy")}
-          />
-          <LabelValuePair label="Trailhead" value={trip?.trailhead} />
-          <LabelValuePair
-            label="Number of participants"
-            value={trip?.totalParticipantCount}
-          />
+          <span className="truncate">
+            {trip?.date && format(parseISO(trip?.date), "dd/MM/yy")}
+          </span>
+          <div className="truncate">
+            <span className="font-semibold">Trailhead:</span>
+            <span className="ml-1">{trip?.trailhead}</span>
+          </div>
+          <span className="truncate">
+            {`${trip?.totalParticipantCount} ${pluralize(
+              "participant",
+              trip?.totalParticipantCount,
+            )}`}
+          </span>
         </div>
       ))}
     </>
