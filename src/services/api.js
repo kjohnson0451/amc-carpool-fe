@@ -13,6 +13,10 @@ export const getTrips = async () => {
   }
 }
 
-export const getTrip = async () => {
-  "Placeholder"
+export const deleteTrip = async (tripId) => {
+  try {
+    await axiosInstance.delete(`/trips/${tripId}`)
+  } catch (error) {
+    throw new Error("Error deleting trip")
+  }
 }

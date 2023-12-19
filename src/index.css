@@ -37,6 +37,41 @@
     text-decoration: underline;
   }
 
+  button {
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: #615287;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #171023;
+    cursor: pointer;
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
+  }
+  button:not([disabled]):hover {
+    background-color: #46456f;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  button:not([disabled]):active {
+    transform: translate(2px, 2px);
+    box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.3);
+  }
+
+  button:disabled {
+    border-width: 0;
+    color: #171023;
+    background-color: #bfbfbf;
+    cursor: not-allowed;
+    /* You can adjust other styles for disabled buttons here */
+  }
+
   h1 {
     font-size: 32px;
     padding-bottom: 1rem;
