@@ -1,0 +1,3 @@
+- Use toasts to display notifications and errors (Udemy React course 27.351)
+- Date picker on create trip form
+- Confirm delete (Udemy React course 28.370)

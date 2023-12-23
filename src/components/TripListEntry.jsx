@@ -9,7 +9,7 @@ function TripListEntry({ trip, index }) {
     <div
       className={`${
         index !== 0 ? "mt-2" : ""
-      } grid-cols-fr group grid grid-cols-[1fr_125px] gap-4 rounded-lg border border-stone-600 bg-custom-gray-darkest p-4 text-sm hover:cursor-pointer hover:bg-custom-purple-dark lg:grid-cols-[1fr_90px_1fr_125px_80px]`}
+      } group grid grid-cols-[1fr_125px] gap-4 rounded-lg border border-stone-600 bg-custom-gray-darkest p-4 text-sm hover:cursor-pointer hover:bg-custom-purple-dark lg:grid-cols-[1fr_90px_1fr_125px_80px]`}
     >
       <div className="self-center truncate">
         <span className="font-semibold">Trip:</span>

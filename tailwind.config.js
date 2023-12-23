@@ -12,7 +12,7 @@ export default {
         "custom-purple-link-hover": "#797fff",
       },
       screens: {
-        sm: "320px",
+        sm: "400px",
         md: "640px",
       },
     },
