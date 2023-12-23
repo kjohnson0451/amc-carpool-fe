@@ -19,5 +19,7 @@ module.exports = {
     "react/prop-types": "off",
     indent: ["error", 2, { SwitchCase: 1 }],
     "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/button-has-type": "off",
   },
 }

@@ -3,8 +3,8 @@ function Input({
   id,
   type,
   placeholder = null,
-  onChange = null,
   disabled = false,
+  register = null,
 }) {
   return (
     <div className="grid-cols-fr mt-4 grid grid-cols-[1fr_1.2fr] first:mt-0">
@@ -14,8 +14,8 @@ function Input({
           id={id}
           type={type}
           placeholder={placeholder}
-          onChange={onChange}
           disabled={disabled}
+          {...register}
         />
       </span>
     </div>

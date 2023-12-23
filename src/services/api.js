@@ -13,6 +13,15 @@ export const getTrips = async () => {
   }
 }
 
+export const createTrip = async (tripData) => {
+  try {
+    const response = await axiosInstance.post("/trips", tripData)
+    return response.data.trip
+  } catch (error) {
+    throw new Error("Error creating trip")
+  }
+}
+
 export const deleteTrip = async (tripId) => {
   try {
     await axiosInstance.delete(`/trips/${tripId}`)

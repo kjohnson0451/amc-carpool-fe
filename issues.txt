@@ -1,3 +1,5 @@
 - Use toasts to display notifications and errors (Udemy React course 27.351)
+- Use toasts to display cabin creation success (Udemy React source 27.353)
 - Date picker on create trip form
+- Validation for create trip form
 - Confirm delete (Udemy React course 28.370)
