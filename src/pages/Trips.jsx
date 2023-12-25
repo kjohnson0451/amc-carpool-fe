@@ -13,7 +13,9 @@ function Trips() {
         Add new trip
       </button>
       {showForm && <CreateTripForm />}
-      <TripList />
+      <div className="mt-4">
+        <TripList />
+      </div>
     </MainLayout>
   )
 }
