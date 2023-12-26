@@ -1,9 +1,9 @@
-import useTripData from "@hooks/useTripData"
+import useTrips from "@hooks/useTrips"
 
 import TripListEntry from "@components/TripListEntry"
 
 function TripList() {
-  const { data: trips, isLoading, isError } = useTripData()
+  const { data: trips, isLoading, isError } = useTrips()
 
   if (isLoading) {
     return <p>Loading...</p>
