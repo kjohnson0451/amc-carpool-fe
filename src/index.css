@@ -23,7 +23,6 @@
       min-height: 100vh;
     }
   }
-  a,
   .link {
     font-weight: 500;
     color: #8a90ff;
@@ -31,7 +30,6 @@
     cursor: pointer; /* Ensure pointer cursor for interaction */
   }
 
-  a:hover,
   .link:hover {
     color: #797fff;
     text-decoration: underline;
