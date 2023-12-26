@@ -13,6 +13,15 @@ export const getTrips = async () => {
   }
 }
 
+export const getTrip = async (tripId) => {
+  try {
+    const response = await axiosInstance.get(`/trips/${tripId}`)
+    return response.data.trip
+  } catch (error) {
+    throw new Error("Error fetching trip")
+  }
+}
+
 export const createTrip = async (tripData) => {
   try {
     const response = await axiosInstance.post("/trips", tripData)
