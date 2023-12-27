@@ -5,9 +5,10 @@ import TripDetails from "@components/TripDetails"
 function Trip() {
   const tripState = useTrip()
   const header = tripState?.data?.name
+  const previousPage = { label: "all trips", to: "/trips" }
 
   return (
-    <MainLayout header={header}>
+    <MainLayout header={header} previousPage={previousPage}>
       <TripDetails tripState={tripState} />
     </MainLayout>
   )
