@@ -22,5 +22,8 @@ module.exports = {
     "react/jsx-props-no-spreading": "off",
     "react/button-has-type": "off",
     "react/jsx-no-useless-fragment": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "object-curly-newline": "off",
   },
 }

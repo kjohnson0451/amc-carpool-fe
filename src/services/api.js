@@ -31,6 +31,14 @@ export const createTrip = async (tripData) => {
   }
 }
 
+export const updateTrip = async ({ tripId, tripData }) => {
+  try {
+    await axiosInstance.patch(`/trips/${tripId}`, tripData)
+  } catch (error) {
+    throw new Error("Error updating trip")
+  }
+}
+
 export const deleteTrip = async (tripId) => {
   try {
     await axiosInstance.delete(`/trips/${tripId}`)
