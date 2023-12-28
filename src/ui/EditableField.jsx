@@ -27,8 +27,8 @@ function EditableField({ name, label, value, mutate }) {
   }
 
   return (
-    <div>
-      <span>{label}: </span>
+    <div className="flex">
+      <span className="whitespace-nowrap">{label}: </span>
       {isEditing ? (
         <input
           type="text"
@@ -37,7 +37,7 @@ function EditableField({ name, label, value, mutate }) {
           onKeyDown={handleKeyDown}
         />
       ) : (
-        <span>{value}</span>
+        <span className="m-w-0 truncate">{value}</span>
       )}
       {isEditing ? (
         <span className="cursor-pointer" onClick={handleUpdate}>

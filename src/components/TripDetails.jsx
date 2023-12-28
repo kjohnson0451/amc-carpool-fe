@@ -13,15 +13,22 @@ function TripDetails({ tripState }) {
     return <p>Error fetching trip</p>
   }
 
-  const { name, Participants, CarpoolGroups } = trip
+  const { name, date, trailhead, Participants, CarpoolGroups } = trip
 
   return (
     <>
-      <div>
+      <div className="grid grid-rows-3 lg:grid-cols-3">
         <EditableField
           name="name"
           label="Trip name"
           value={name}
+          mutate={mutate}
+        />
+        <EditableField name="date" label="Date" value={date} mutate={mutate} />
+        <EditableField
+          name="trailhead"
+          label="Traihead"
+          value={trailhead}
           mutate={mutate}
         />
       </div>
