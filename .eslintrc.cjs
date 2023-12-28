@@ -21,5 +21,6 @@ module.exports = {
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-props-no-spreading": "off",
     "react/button-has-type": "off",
+    "react/jsx-no-useless-fragment": "off",
   },
 }
