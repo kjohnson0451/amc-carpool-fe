@@ -17,7 +17,7 @@ function TripDetails({ tripState }) {
 
   return (
     <>
-      <div className="grid grid-rows-3 lg:grid-cols-3">
+      <div className="grid grid-rows-3 lg:grid-cols-3 lg:grid-rows-none">
         <EditableField
           name="name"
           label="Trip name"
