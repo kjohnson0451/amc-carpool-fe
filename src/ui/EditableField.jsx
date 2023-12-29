@@ -28,7 +28,7 @@ function EditableField({ name, label, value, mutate }) {
 
   return (
     <div className="flex">
-      <span className="whitespace-nowrap">{label}: </span>
+      <span className="mr-1 whitespace-nowrap">{label}: </span>
       {isEditing ? (
         <input
           type="text"
