@@ -33,6 +33,10 @@ function TripDetails({ tripState }) {
           mutate={mutate}
         />
       </div>
+      <div className="mt-2 flex">
+        <button>Add Carpool Group</button>
+        <button className="ml-2">Add Participant</button>
+      </div>
       {Participants.length > 0 && (
         <CarpoolGroup participants={Participants} isUngrouped />
       )}
