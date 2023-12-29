@@ -41,7 +41,11 @@ function TripDetails({ tripState }) {
         <CarpoolGroup participants={Participants} isUngrouped />
       )}
       {CarpoolGroups.map((carpoolGroup, index) => (
-        <CarpoolGroup participants={carpoolGroup.Participants} index={index} />
+        <CarpoolGroup
+          participants={carpoolGroup.Participants}
+          index={index}
+          key={carpoolGroup.id}
+        />
       ))}
     </>
   )
