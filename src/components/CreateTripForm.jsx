@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 import Input from "@ui/Input"
-import useCreateTrip from "@hooks/useCreateTrip"
+import useCreateTrip from "@hooks/trips/useCreateTrip"
 
 function CreateTripForm() {
   const { register, handleSubmit, reset } = useForm()

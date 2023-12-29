@@ -1,5 +1,5 @@
 import { format, parseISO } from "date-fns"
-import useDeleteTrip from "@hooks/useDeleteTrip"
+import useDeleteTrip from "@hooks/trips/useDeleteTrip"
 import pluralize from "pluralize"
 import { Link } from "react-router-dom"
 

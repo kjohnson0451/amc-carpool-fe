@@ -1,5 +1,5 @@
 import MainLayout from "@ui/MainLayout"
-import useTrip from "@hooks/useTrip"
+import useTrip from "@hooks/trips/useTrip"
 import TripDetails from "@components/TripDetails"
 
 function Trip() {

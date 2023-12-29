@@ -1,4 +1,4 @@
-import useUpdateTrip from "@hooks/useUpdateTrip"
+import useUpdateTrip from "@hooks/trips/useUpdateTrip"
 import CarpoolGroup from "@components/CarpoolGroup"
 import EditableField from "@ui/EditableField"
 

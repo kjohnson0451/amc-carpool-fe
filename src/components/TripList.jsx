@@ -1,4 +1,4 @@
-import useTrips from "@hooks/useTrips"
+import useTrips from "@hooks/trips/useTrips"
 
 import TripListEntry from "@components/TripListEntry"
 
