@@ -1,4 +1,5 @@
 import useUpdateTrip from "@hooks/useUpdateTrip"
+import CarpoolGroup from "@components/CarpoolGroup"
 import EditableField from "@ui/EditableField"
 
 function TripDetails({ tripState }) {
@@ -33,23 +34,10 @@ function TripDetails({ tripState }) {
         />
       </div>
       {Participants.length > 0 && (
-        <div className="rounded-lg border border-stone-600 p-3">
-          <h3>Ungrouped</h3>
-          {Participants.map((participant) => (
-            <div key={participant.id}>{participant.name}</div>
-          ))}
-        </div>
+        <CarpoolGroup participants={Participants} isUngrouped />
       )}
       {CarpoolGroups.map((carpoolGroup, index) => (
-        <div
-          key={carpoolGroup.id}
-          className="rounded-lg border border-stone-600 p-3"
-        >
-          <h3>Carpool Group #{index + 1}</h3>
-          {carpoolGroup.Participants.map((participant) => (
-            <div key={participant.id}>{participant.name}</div>
-          ))}
-        </div>
+        <CarpoolGroup participants={carpoolGroup.Participants} index={index} />
       ))}
     </>
   )
