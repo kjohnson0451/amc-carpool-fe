@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { deleteTrip } from "@services/api"
+import { deleteTrip } from "@services/trips/api"
 import QUERY_KEYS from "@config/queryKeys"
 
 const useDeleteTrip = () => {

@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { createTrip } from "@services/api"
+import { createTrip } from "@services/trips/api"
 import QUERY_KEYS from "@config/queryKeys"
 
 const useCreateTrip = (reset) => {

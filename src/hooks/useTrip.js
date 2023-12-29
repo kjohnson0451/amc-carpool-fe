@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useQuery } from "@tanstack/react-query"
-import { getTrip } from "@services/api"
+import { getTrip } from "@services/trips/api"
 import QUERY_KEYS from "@config/queryKeys"
 
 const useTrip = () => {

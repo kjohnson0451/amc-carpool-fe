@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { updateTrip } from "@services/api"
+import { updateTrip } from "@services/trips/api"
 import QUERY_KEYS from "@config/queryKeys"
 
 const useUpdateTrip = () => {
