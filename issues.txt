@@ -10,3 +10,4 @@
 - Have input box length fit content on large displays
 - Have input box match the length of the value when the value is a long string
 - Space the "edit" icon a little bit better
+- Fix whitespace below editable fields
