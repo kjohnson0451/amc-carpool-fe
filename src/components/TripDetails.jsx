@@ -27,7 +27,7 @@ function TripDetails({ tripState }) {
         <EditableField name="date" label="Date" value={date} mutate={mutate} />
         <EditableField
           name="trailhead"
-          label="Traihead"
+          label="Trailhead"
           value={trailhead}
           mutate={mutate}
         />
