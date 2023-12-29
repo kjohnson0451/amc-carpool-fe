@@ -1,10 +1,12 @@
 import useUpdateTrip from "@hooks/trips/useUpdateTrip"
+import useCreateCarpoolGroup from "@hooks/carpoolGroups/useCreateCarpoolGroup"
 import CarpoolGroup from "@components/CarpoolGroup"
 import EditableField from "@ui/EditableField"
 
 function TripDetails({ tripState }) {
   const { data: trip, isLoading, isError } = tripState
-  const { mutate } = useUpdateTrip()
+  const { mutate: updateTrip } = useUpdateTrip()
+  const { mutate: createCarpoolGroup } = useCreateCarpoolGroup()
 
   if (isLoading) {
     return <p>Loading...</p>
@@ -23,18 +25,23 @@ function TripDetails({ tripState }) {
           name="name"
           label="Trip name"
           value={name}
-          mutate={mutate}
+          mutate={updateTrip}
         />
-        <EditableField name="date" label="Date" value={date} mutate={mutate} />
+        <EditableField
+          name="date"
+          label="Date"
+          value={date}
+          mutate={updateTrip}
+        />
         <EditableField
           name="trailhead"
           label="Trailhead"
           value={trailhead}
-          mutate={mutate}
+          mutate={updateTrip}
         />
       </div>
       <div className="mt-2 flex">
-        <button>Add Carpool Group</button>
+        <button onClick={createCarpoolGroup}>Add Carpool Group</button>
         <button className="ml-2">Add Participant</button>
       </div>
       {Participants.length > 0 && (
