@@ -1,8 +1,4 @@
-import axios from "axios"
-
-const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
-})
+import axiosInstance from "@utils/axiosInstance"
 
 export const getTrips = async () => {
   try {

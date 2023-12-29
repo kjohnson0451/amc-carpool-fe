@@ -13,6 +13,7 @@ export default defineConfig({
       "@pages": "/src/pages",
       "@services": "/src/services",
       "@ui": "/src/ui",
+      "@utils": "/src/utils",
       // Add more aliases as needed
     },
   },
