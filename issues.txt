@@ -3,3 +3,10 @@
 - Date picker on create trip form
 - Validation for create trip form
 - Confirm delete (Udemy React course 28.370)
+- Loading indication for editing fields
+- Put checkmark inside editable fields
+- Date picker on editable field
+- Date and optionally time?
+- Have input box length fit content on large displays
+- Have input box match the length of the value when the value is a long string
+- Space the "edit" icon a little bit better
