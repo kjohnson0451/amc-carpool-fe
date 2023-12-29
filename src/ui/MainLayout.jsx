@@ -10,7 +10,7 @@ function MainLayout({ header, previousPage = {}, children }) {
           <Link to={previousPageTo}>⬅ Back to {previousPageLabel}</Link>
         )}
       </span>
-      <h2>{header}</h2>
+      <h2 className="truncate">{header}</h2>
       <div>{children}</div>
     </>
   )
