@@ -1,9 +1,12 @@
+import { useState } from "react"
 import useUpdateTrip from "@hooks/trips/useUpdateTrip"
 import useCreateCarpoolGroup from "@hooks/carpoolGroups/useCreateCarpoolGroup"
 import CarpoolGroup from "@components/CarpoolGroup"
+import CreateParticipantAndAddToTripForm from "@components/CreateParticipantForm"
 import EditableField from "@ui/EditableField"
 
 function TripDetails({ tripState }) {
+  const [showForm, setShowForm] = useState(false)
   const { data: trip, isLoading, isError } = tripState
   const { mutate: updateTrip } = useUpdateTrip()
   const { mutate: createCarpoolGroup } = useCreateCarpoolGroup()
@@ -42,8 +45,11 @@ function TripDetails({ tripState }) {
       </div>
       <div className="mt-2 flex">
         <button onClick={createCarpoolGroup}>Add Carpool Group</button>
-        <button className="ml-2">Add Participant</button>
+        <button onClick={() => setShowForm((show) => !show)} className="ml-2">
+          Add Participant
+        </button>
       </div>
+      {showForm && <CreateParticipantAndAddToTripForm />}
       {Participants.length > 0 && (
         <CarpoolGroup participants={Participants} isUngrouped />
       )}

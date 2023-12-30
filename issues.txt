@@ -6,6 +6,7 @@
 - Confirm delete (Udemy React course 28.370)
 - Loading indication for editing fields
 - Put checkmark inside editable fields
+- Put an x button inside editable fields and have "escape" and possibly "back" exit out of editing
 - Date picker on editable field
 - Date and optionally time?
 - Have input box length fit content on large displays
