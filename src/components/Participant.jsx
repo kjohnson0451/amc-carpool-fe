@@ -1,8 +1,11 @@
 import EditableField from "@ui/EditableField"
 import useUpdateParticipant from "@hooks/participants/useUpdateParticipant"
+import useDeleteParticipant from "@hooks/participants/useDeleteParticipant"
 
 function Participant({ participant }) {
-  const { mutate: updateParticipant } = useUpdateParticipant(participant.id)
+  const { mutate: updateParticipant } = useUpdateParticipant()
+  const { mutate: deleteParticipant, isPending: isDeleting } =
+    useDeleteParticipant()
 
   return (
     <div className="mt-2 grid grid-cols-2 rounded-md border border-stone-600 p-1">
@@ -67,6 +70,16 @@ function Participant({ participant }) {
           })
         }
       />
+      <button
+        className="w-[83px]"
+        type="button"
+        onClick={() => {
+          deleteParticipant(participant.id)
+        }}
+        disabled={isDeleting}
+      >
+        Delete
+      </button>
     </div>
   )
 }
