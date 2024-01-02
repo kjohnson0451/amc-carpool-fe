@@ -16,4 +16,5 @@
 - Work on responsiveness for participant component. Make sure the input box doesn't overlap anything.
 - Make the dev experience for the EditableField better. Passing in an onUpdate fallback is kind of ugly.
 - Add margin above/below participant component
+- Use a compound component to make the Form that can be reused to make CreateTripFrom and CreateParticipantForm
 - Dive deeper into query keys and caching. Is the query key I'm using for useCreateCarpoolGroup appropriate?

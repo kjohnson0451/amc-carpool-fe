@@ -28,5 +28,6 @@ module.exports = {
     "implicit-arrow-linebreak": "off",
     "operator-linebreak": "off",
     "react/jsx-curly-newline": "off",
+    "jsx-a11y/control-has-associated-label": "off",
   },
 }

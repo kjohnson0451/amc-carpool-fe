@@ -2,19 +2,17 @@ import { useForm } from "react-hook-form"
 import Input from "@ui/Input"
 import useCreateTrip from "@hooks/trips/useCreateTrip"
 
-function CreateTripForm() {
+function CreateTripForm({ onCloseModal }) {
   const { register, handleSubmit, reset } = useForm()
   const { mutate: createTrip, isPending: isCreating } = useCreateTrip(reset)
 
   function onSubmit(data) {
     createTrip(data)
+    onCloseModal?.()
   }
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="w-[330px] rounded-md bg-custom-gray-darkest p-3"
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className="w-[330px] p-2">
       <Input
         label="Trip Name"
         id="name"
@@ -29,7 +27,9 @@ function CreateTripForm() {
         register={register("trailhead")}
       />
       <div className="mt-3">
-        <button type="reset">Cancel</button>
+        <button type="reset" onClick={() => onCloseModal?.()}>
+          Cancel
+        </button>
         <button type="submit" className="ml-3" disabled={isCreating}>
           Create new trip
         </button>
