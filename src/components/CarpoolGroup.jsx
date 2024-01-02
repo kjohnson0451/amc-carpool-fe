@@ -1,3 +1,5 @@
+import Participant from "@components/Participant"
+
 function CarpoolGroup({ participants, index, isUngrouped }) {
   if (index === undefined && !isUngrouped) {
     throw new Error(
@@ -15,7 +17,7 @@ function CarpoolGroup({ participants, index, isUngrouped }) {
     >
       <h3>{header}</h3>
       {participants.map((participant) => (
-        <div key={participant.id}>{participant.name}</div>
+        <Participant participant={participant} key={participant.id} />
       ))}
     </div>
   )

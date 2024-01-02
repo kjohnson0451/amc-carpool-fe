@@ -15,6 +15,14 @@ export const createParticipantAndAddToTrip = async ({
   }
 }
 
+export const updateParticipant = async ({ participantId, participantData }) => {
+  try {
+    await axiosInstance.patch(`/participants/${participantId}`, participantData)
+  } catch (error) {
+    throw new Error("Error updating participant")
+  }
+}
+
 export const deleteParticipant = async (participantId) => {
   try {
     await axiosInstance.delete(`/participants/${participantId}`)

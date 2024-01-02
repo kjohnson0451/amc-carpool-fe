@@ -4,8 +4,10 @@ import useCreateCarpoolGroup from "@hooks/carpoolGroups/useCreateCarpoolGroup"
 import CarpoolGroup from "@components/CarpoolGroup"
 import CreateParticipantAndAddToTripForm from "@components/CreateParticipantForm"
 import EditableField from "@ui/EditableField"
+import { useParams } from "react-router-dom"
 
 function TripDetails({ tripState }) {
+  const { tripId } = useParams()
   const [showForm, setShowForm] = useState(false)
   const { data: trip, isLoading, isError } = tripState
   const { mutate: updateTrip } = useUpdateTrip()
@@ -25,22 +27,25 @@ function TripDetails({ tripState }) {
     <>
       <div className="lg:grid lg:grid-cols-3">
         <EditableField
-          name="name"
           label="Trip name"
           value={name}
-          mutate={updateTrip}
+          onUpdate={(editedValue) =>
+            updateTrip({ tripId, tripData: { name: editedValue } })
+          }
         />
         <EditableField
-          name="date"
           label="Date"
           value={date}
-          mutate={updateTrip}
+          onUpdate={(editedValue) =>
+            updateTrip({ tripId, tripData: { date: editedValue } })
+          }
         />
         <EditableField
-          name="trailhead"
           label="Trailhead"
           value={trailhead}
-          mutate={updateTrip}
+          onUpdate={(editedValue) =>
+            updateTrip({ tripId, tripData: { trailhead: editedValue } })
+          }
         />
       </div>
       <div className="mt-2 flex">

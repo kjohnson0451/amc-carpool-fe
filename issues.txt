@@ -1,3 +1,4 @@
+- If I edit the Trip Name and go back to the trip list, the new trip name isn't reflected in the Trip list item
 - Figure out date vs time
 - Use toasts to display notifications and errors (Udemy React course 27.351)
 - Use toasts to display cabin creation success (Udemy React source 27.353)
@@ -12,5 +13,7 @@
 - Have input box length fit content on large displays
 - Have input box match the length of the value when the value is a long string
 - Space the "edit" icon a little bit better
-- Fix whitespace below editable fields
+- Work on responsiveness for participant component. Make sure the input box doesn't overlap anything.
+- Make the dev experience for the EditableField better. Passing in an onUpdate fallback is kind of ugly.
+- Add margin above/below participant component
 - Dive deeper into query keys and caching. Is the query key I'm using for useCreateCarpoolGroup appropriate?

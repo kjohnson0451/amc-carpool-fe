@@ -1,8 +1,6 @@
 import { useState } from "react"
-import { useParams } from "react-router-dom"
 
-function EditableField({ name, label, value, mutate }) {
-  const { tripId } = useParams()
+function EditableField({ label, value, onUpdate }) {
   const [isEditing, setIsEditing] = useState(false)
   const [editedValue, setEditedValue] = useState(value)
 
@@ -15,8 +13,7 @@ function EditableField({ name, label, value, mutate }) {
   }
 
   function handleUpdate() {
-    const tripData = { [name]: editedValue }
-    mutate({ tripId, tripData })
+    onUpdate(editedValue)
     setIsEditing(false)
   }
 
