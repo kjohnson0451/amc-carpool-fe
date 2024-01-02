@@ -4,7 +4,7 @@ import pluralize from "pluralize"
 import { Link } from "react-router-dom"
 
 function TripListEntry({ trip, index }) {
-  const { isPending: isDeleting, mutate } = useDeleteTrip()
+  const { mutate: deleteTrip, isPending: isDeleting } = useDeleteTrip()
 
   return (
     <Link to={`/trips/${trip.id}`}>
@@ -37,7 +37,7 @@ function TripListEntry({ trip, index }) {
             type="button"
             onClick={(e) => {
               e.preventDefault()
-              mutate(trip.id)
+              deleteTrip(trip.id)
             }}
             disabled={isDeleting}
           >

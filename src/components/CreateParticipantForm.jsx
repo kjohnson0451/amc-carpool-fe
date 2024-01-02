@@ -4,11 +4,11 @@ import useCreateParticipantAndAddToTrip from "@hooks/participants/useCreateParti
 
 function CreateParticipantAndAddToTripForm() {
   const { register, handleSubmit, reset } = useForm()
-  const { mutate, isPending: isCreating } =
+  const { mutate: createTrip, isPending: isCreating } =
     useCreateParticipantAndAddToTrip(reset)
 
   function onSubmit(data) {
-    mutate(data)
+    createTrip(data)
   }
   return (
     <form

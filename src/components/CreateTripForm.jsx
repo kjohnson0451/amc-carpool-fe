@@ -4,10 +4,10 @@ import useCreateTrip from "@hooks/trips/useCreateTrip"
 
 function CreateTripForm() {
   const { register, handleSubmit, reset } = useForm()
-  const { mutate, isPending: isCreating } = useCreateTrip(reset)
+  const { mutate: createTrip, isPending: isCreating } = useCreateTrip(reset)
 
   function onSubmit(data) {
-    mutate(data)
+    createTrip(data)
   }
 
   return (
