@@ -60,6 +60,7 @@ function TripDetails({ tripState }) {
       )}
       {CarpoolGroups.map((carpoolGroup, index) => (
         <CarpoolGroup
+          id={carpoolGroup.id}
           participants={carpoolGroup.Participants}
           index={index}
           key={carpoolGroup.id}

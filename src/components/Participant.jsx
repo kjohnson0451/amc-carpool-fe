@@ -5,7 +5,7 @@ function Participant({ participant }) {
   const { mutate: updateParticipant } = useUpdateParticipant(participant.id)
 
   return (
-    <div className="grid grid-cols-2 rounded-md border border-stone-600 p-1">
+    <div className="mt-2 grid grid-cols-2 rounded-md border border-stone-600 p-1">
       <EditableField
         label="Participant name"
         value={participant.name}
