@@ -2,13 +2,14 @@ import { useForm } from "react-hook-form"
 import Input from "@ui/Input"
 import useCreateParticipantAndAddToTrip from "@hooks/participants/useCreateParticipantAndAddToTrip"
 
-function CreateParticipantAndAddToTripForm() {
+function CreateParticipantForm({ onCloseModal }) {
   const { register, handleSubmit, reset } = useForm()
   const { mutate: createTrip, isPending: isCreating } =
     useCreateParticipantAndAddToTrip(reset)
 
   function onSubmit(data) {
     createTrip(data)
+    onCloseModal?.()
   }
   return (
     <form
@@ -52,7 +53,9 @@ function CreateParticipantAndAddToTripForm() {
         register={register("phone")}
       />
       <div className="mt-3">
-        <button type="reset">Cancel</button>
+        <button type="reset" onClick={() => onCloseModal?.()}>
+          Cancel
+        </button>
         <button type="submit" className="ml-3" disabled={isCreating}>
           Add new participant
         </button>
@@ -61,4 +64,4 @@ function CreateParticipantAndAddToTripForm() {
   )
 }
 
-export default CreateParticipantAndAddToTripForm
+export default CreateParticipantForm

@@ -1,14 +1,12 @@
-import { useState } from "react"
 import useUpdateTrip from "@hooks/trips/useUpdateTrip"
 import useCreateCarpoolGroup from "@hooks/carpoolGroups/useCreateCarpoolGroup"
 import CarpoolGroup from "@components/CarpoolGroup"
-import CreateParticipantAndAddToTripForm from "@components/CreateParticipantForm"
 import EditableField from "@ui/EditableField"
 import { useParams } from "react-router-dom"
+import AddParticipant from "./AddParticipant"
 
 function TripDetails({ tripState }) {
   const { tripId } = useParams()
-  const [showForm, setShowForm] = useState(false)
   const { data: trip, isLoading, isError } = tripState
   const { mutate: updateTrip } = useUpdateTrip()
   const { mutate: createCarpoolGroup } = useCreateCarpoolGroup()
@@ -50,11 +48,10 @@ function TripDetails({ tripState }) {
       </div>
       <div className="mt-2 flex">
         <button onClick={createCarpoolGroup}>Add Carpool Group</button>
-        <button onClick={() => setShowForm((show) => !show)} className="ml-2">
-          Add Participant
-        </button>
+        <span className="ml-2">
+          <AddParticipant />
+        </span>
       </div>
-      {showForm && <CreateParticipantAndAddToTripForm />}
       {Participants.length > 0 && (
         <CarpoolGroup participants={Participants} isUngrouped />
       )}
