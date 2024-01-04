@@ -3,13 +3,13 @@ import useTrip from "@hooks/trips/useTrip"
 import TripDetails from "@components/TripDetails"
 
 function Trip() {
-  const tripState = useTrip()
-  const header = tripState?.data?.name
+  const { data: trip } = useTrip()
+  const header = trip?.name
   const previousPage = { label: "all trips", to: "/trips" }
 
   return (
     <MainLayout header={header} previousPage={previousPage}>
-      <TripDetails tripState={tripState} />
+      <TripDetails />
     </MainLayout>
   )
 }

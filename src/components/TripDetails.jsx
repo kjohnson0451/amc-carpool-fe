@@ -1,13 +1,14 @@
+import { useParams } from "react-router-dom"
+import useTrip from "@hooks/trips/useTrip"
 import useUpdateTrip from "@hooks/trips/useUpdateTrip"
 import useCreateCarpoolGroup from "@hooks/carpoolGroups/useCreateCarpoolGroup"
 import CarpoolGroup from "@components/CarpoolGroup"
 import AddParticipant from "@components/AddParticipant"
 import EditableField from "@ui/EditableField"
-import { useParams } from "react-router-dom"
 
-function TripDetails({ tripState }) {
+function TripDetails() {
   const { tripId } = useParams()
-  const { data: trip, isLoading, isError } = tripState
+  const { data: trip, isLoading, isError } = useTrip()
   const { mutate: updateTrip } = useUpdateTrip()
   const { mutate: createCarpoolGroup } = useCreateCarpoolGroup()
 
