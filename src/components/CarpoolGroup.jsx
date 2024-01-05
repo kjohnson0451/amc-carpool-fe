@@ -1,4 +1,5 @@
 import Participant from "@components/Participant"
+import MoveParticipantToTrip from "@components/MoveParticipantToTrip"
 import useDeleteCarpoolGroup from "@hooks/carpoolGroups/useDeleteCarpoolGroup"
 
 function CarpoolGroup({ id, participants, index, isUngrouped }) {
@@ -34,6 +35,11 @@ function CarpoolGroup({ id, participants, index, isUngrouped }) {
       {participants.map((participant) => (
         <Participant participant={participant} key={participant.id} />
       ))}
+      {!isUngrouped && (
+        <div className="mt-2">
+          <MoveParticipantToTrip carpoolGroupId={id} />
+        </div>
+      )}
     </div>
   )
 }
