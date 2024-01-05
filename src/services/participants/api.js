@@ -43,3 +43,13 @@ export const moveParticipantToCarpoolGroup = async ({
     throw new Error("Error moving participant to carpool group")
   }
 }
+
+export const removeParticipantFromCarpoolGroup = async (participantId) => {
+  try {
+    await axiosInstance.patch(
+      `participants/${participantId}/remove-from-carpool-group`,
+    )
+  } catch (error) {
+    throw new Error("Error removing participant from carpool group")
+  }
+}
