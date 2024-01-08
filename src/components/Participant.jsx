@@ -28,6 +28,7 @@ function Participant({ participant }) {
       <EditableField
         label="Status"
         value={participant.status}
+        type="text"
         onUpdate={(editedValue) =>
           updateParticipant({
             participantId: participant.id,
@@ -36,18 +37,9 @@ function Participant({ participant }) {
         }
       />
       <EditableField
-        label="Departure time"
-        value={participant.departureTime}
-        onUpdate={(editedValue) =>
-          updateParticipant({
-            participantId: participant.id,
-            participantData: { departureTime: editedValue },
-          })
-        }
-      />
-      <EditableField
         label="Departure location"
         value={participant.departureLocation}
+        type="text"
         onUpdate={(editedValue) =>
           updateParticipant({
             participantId: participant.id,
@@ -58,6 +50,7 @@ function Participant({ participant }) {
       <EditableField
         label="Email"
         value={participant.email}
+        type="text"
         onUpdate={(editedValue) =>
           updateParticipant({
             participantId: participant.id,
@@ -68,6 +61,7 @@ function Participant({ participant }) {
       <EditableField
         label="Phone"
         value={participant.phone}
+        type="text"
         onUpdate={(editedValue) =>
           updateParticipant({
             participantId: participant.id,

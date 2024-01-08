@@ -28,6 +28,7 @@ function TripDetails() {
         <EditableField
           label="Trip name"
           value={name}
+          type="text"
           onUpdate={(editedValue) =>
             updateTrip({ tripId, tripData: { name: editedValue } })
           }
@@ -35,6 +36,7 @@ function TripDetails() {
         <EditableField
           label="Date"
           value={date}
+          type="date"
           onUpdate={(editedValue) =>
             updateTrip({ tripId, tripData: { date: editedValue } })
           }
@@ -42,6 +44,7 @@ function TripDetails() {
         <EditableField
           label="Trailhead"
           value={trailhead}
+          type="text"
           onUpdate={(editedValue) =>
             updateTrip({ tripId, tripData: { trailhead: editedValue } })
           }

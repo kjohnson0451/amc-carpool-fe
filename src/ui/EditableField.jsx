@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function EditableField({ label, value, onUpdate }) {
+function EditableField({ label, value, type, onUpdate }) {
   const [isEditing, setIsEditing] = useState(false)
   const [editedValue, setEditedValue] = useState(value)
 
@@ -28,7 +28,7 @@ function EditableField({ label, value, onUpdate }) {
       <span className="mr-1 whitespace-nowrap">{label}: </span>
       {isEditing ? (
         <input
-          type="text"
+          type={type}
           value={editedValue}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
