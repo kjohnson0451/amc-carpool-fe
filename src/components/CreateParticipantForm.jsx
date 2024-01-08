@@ -22,12 +22,15 @@ function CreateParticipantForm({ onCloseModal }) {
         type="text"
         register={register("name")}
       />
-      <Input
-        label="Status"
-        id="status"
-        type="text"
-        register={register("status")}
-      />
+      {/* This eslint rule seems to be busted */}
+      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+      <label className="mt-2 block first:mt-0">
+        Status
+        <select className="block" id="status" {...register("status")}>
+          <option value="N">Need Ride</option>
+          <option value="D">Can Drive</option>
+        </select>
+      </label>
       <Input
         label="Departure location"
         id="departureLocation"
