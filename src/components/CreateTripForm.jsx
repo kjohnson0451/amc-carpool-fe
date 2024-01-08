@@ -19,7 +19,7 @@ function CreateTripForm({ onCloseModal }) {
         type="text"
         register={register("name")}
       />
-      <Input label="Date" id="date" type="text" register={register("date")} />
+      <Input label="Date" id="date" type="date" register={register("date")} />
       <Input
         label="Trailhead"
         id="trailhead"

@@ -29,12 +29,6 @@ function CreateParticipantForm({ onCloseModal }) {
         register={register("status")}
       />
       <Input
-        label="Departure time"
-        id="departureTime"
-        type="text"
-        register={register("departureTime")}
-      />
-      <Input
         label="Departure location"
         id="departureLocation"
         type="text"
