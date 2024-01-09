@@ -1,4 +1,8 @@
-# amc-carpool-fe
+# AMC Carpool Frontend (amc-carpool-fe)
+
+## Description
+
+The AMC Carpool Frontend is a web app specifically crafted for hiking club event leaders, aiming to streamline carpool coordination. At its core, the app focuses on the primary resource of a "trip," supplemented by "carpool groups" and "participants" as secondary resources. Its design facilitates the creation and management of these resources, simplifying the process for event leaders.
 
 ## Installation
 
