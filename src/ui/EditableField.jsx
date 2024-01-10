@@ -37,10 +37,14 @@ function EditableField({ label, value, type, onUpdate }) {
         <span className="m-w-0 truncate">{value}</span>
       )}
       {isEditing ? (
+        // eslint-disable-next-line max-len
+        // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
         <span className="cursor-pointer" onClick={handleUpdate}>
           ✓
         </span>
       ) : (
+        // eslint-disable-next-line max-len
+        // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
         <span className="cursor-pointer" onClick={handleEditClick}>
           🖉
         </span>
