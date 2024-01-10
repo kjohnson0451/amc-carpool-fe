@@ -51,7 +51,9 @@ function TripDetails() {
         />
       </div>
       <div className="mt-2 flex">
-        <button onClick={createCarpoolGroup}>Add Carpool Group</button>
+        <button type="button" onClick={createCarpoolGroup}>
+          Add Carpool Group
+        </button>
         <span className="ml-2">
           <AddParticipant />
         </span>

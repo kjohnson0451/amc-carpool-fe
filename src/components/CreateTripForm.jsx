@@ -27,7 +27,7 @@ function CreateTripForm({ onCloseModal }) {
         register={register("trailhead")}
       />
       <div className="mt-3">
-        <button type="reset" onClick={() => onCloseModal?.()}>
+        <button type="button" onClick={() => onCloseModal?.()}>
           Cancel
         </button>
         <button type="submit" className="ml-3" disabled={isCreating}>

@@ -20,7 +20,6 @@ module.exports = {
     indent: ["error", 2, { SwitchCase: 1 }],
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-props-no-spreading": "off",
-    "react/button-has-type": "off",
     "react/jsx-no-useless-fragment": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
