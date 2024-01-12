@@ -35,6 +35,10 @@ npm install
 npm run dev
 ```
 
+5. Access the Application
+
+Once the app is up and running, access it at http://localhost:5173 in your web browser. As of this writing, the main page is "All trips", and can add trips via "Add new trip."
+
 ## Technologies Used
 
 - JavaScript
