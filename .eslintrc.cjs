@@ -23,5 +23,6 @@ module.exports = {
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-curly-newline": "off",
+    "jsx-a11y/label-has-associated-control": "off",
   },
 }

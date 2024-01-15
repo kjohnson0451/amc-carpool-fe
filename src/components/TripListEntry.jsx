@@ -20,7 +20,7 @@ function TripListEntry({ trip, index }) {
           </span>
         </div>
         <span className="self-center truncate">
-          {trip?.date && format(parseISO(trip?.date), "dd/MM/yy")}
+          {trip?.date && format(parseISO(trip?.date), "MM/dd/yy")}
         </span>
         <div className="self-center truncate">
           <span className="font-semibold">Trailhead:</span>
