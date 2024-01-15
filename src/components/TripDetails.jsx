@@ -5,6 +5,7 @@ import useCreateCarpoolGroup from "@hooks/carpoolGroups/useCreateCarpoolGroup"
 import CarpoolGroup from "@components/CarpoolGroup"
 import AddParticipant from "@components/AddParticipant"
 import EditableField from "@ui/EditableField"
+import Button from "@ui/Button"
 
 function TripDetails() {
   const { tripId } = useParams()
@@ -51,9 +52,9 @@ function TripDetails() {
         />
       </div>
       <div className="mt-2 flex">
-        <button type="button" onClick={createCarpoolGroup}>
+        <Button type="button" onClick={createCarpoolGroup}>
           Add Carpool Group
-        </button>
+        </Button>
         <span className="ml-2">
           <AddParticipant />
         </span>

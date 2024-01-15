@@ -1,11 +1,12 @@
 import CreateParticipantForm from "@components/CreateParticipantForm"
 import Modal from "@ui/Modal"
+import Button from "@ui/Button"
 
 function AddParticipant() {
   return (
     <Modal>
       <Modal.Open opens="create-participant-form">
-        <button type="button">Add new participant</button>
+        <Button type="button">Add new participant</Button>
       </Modal.Open>
       <Modal.Window name="create-participant-form">
         <CreateParticipantForm />

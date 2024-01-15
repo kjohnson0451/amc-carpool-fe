@@ -1,3 +1,5 @@
+import Button from "@ui/Button"
+
 function IconButton({
   type = "button",
   onClick,
@@ -6,15 +8,14 @@ function IconButton({
   disabled,
 }) {
   return (
-    <button
-      // eslint-disable-next-line react/button-has-type
+    <Button
       type={type}
-      className={`${className} p-1.5`}
+      className={`${className} px-1.5 py-1.5`}
       onClick={onClick}
       disabled={disabled}
     >
       {children}
-    </button>
+    </Button>
   )
 }
 

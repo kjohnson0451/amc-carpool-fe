@@ -35,15 +35,9 @@
     text-decoration: underline;
   }
 
-  button {
-    border-radius: 8px;
-    border-width: 1px;
-    border-color: #615287;
-    padding: 0.5em 1em;
-    font-size: 1em;
-    font-weight: 500;
+  /* button {
+   
     font-family: inherit;
-    cursor: pointer;
     transition:
       transform 0.2s,
       box-shadow 0.2s;
@@ -66,7 +60,7 @@
     color: #171023;
     background-color: #bfbfbf;
     cursor: not-allowed;
-  }
+  } */
 
   h1 {
     min-height: 48px;

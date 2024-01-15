@@ -2,6 +2,7 @@ import { format, parseISO } from "date-fns"
 import useDeleteTrip from "@hooks/trips/useDeleteTrip"
 import pluralize from "pluralize"
 import { Link } from "react-router-dom"
+import Button from "@ui/Button"
 
 function TripListEntry({ trip, index }) {
   const { mutate: deleteTrip, isPending: isDeleting } = useDeleteTrip()
@@ -33,7 +34,7 @@ function TripListEntry({ trip, index }) {
           )}`}
         </span>
         <span className="col-start-2 self-center lg:col-start-5">
-          <button
+          <Button
             type="button"
             onClick={(e) => {
               e.preventDefault()
@@ -42,7 +43,7 @@ function TripListEntry({ trip, index }) {
             disabled={isDeleting}
           >
             Delete
-          </button>
+          </Button>
         </span>
       </div>
     </Link>

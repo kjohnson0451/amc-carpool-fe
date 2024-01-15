@@ -4,6 +4,7 @@ import useUpdateParticipant from "@hooks/participants/useUpdateParticipant"
 import useDeleteParticipant from "@hooks/participants/useDeleteParticipant"
 import useRemoveParticipantFromCarpoolGroup from "@hooks/participants/useRemoveParticipantFromCarpoolGroup"
 import IconButton from "@ui/IconButton"
+import Button from "@ui/Button"
 
 function Participant({ participant }) {
   const { mutate: updateParticipant } = useUpdateParticipant()
@@ -79,7 +80,7 @@ function Participant({ participant }) {
           <HiMinus />
         </IconButton>
       </span>
-      <button
+      <Button
         className="w-[87px]"
         type="button"
         onClick={() => {
@@ -88,7 +89,7 @@ function Participant({ participant }) {
         disabled={isDeleting}
       >
         Delete
-      </button>
+      </Button>
     </div>
   )
 }

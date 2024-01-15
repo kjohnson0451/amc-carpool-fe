@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form"
 import Input from "@ui/Input"
+import Button from "@ui/Button"
 import useCreateParticipantAndAddToTrip from "@hooks/participants/useCreateParticipantAndAddToTrip"
 
 function CreateParticipantForm({ onCloseModal }) {
@@ -48,12 +49,16 @@ function CreateParticipantForm({ onCloseModal }) {
         register={register("phone")}
       />
       <div className="mt-3">
-        <button type="button" onClick={() => onCloseModal?.()}>
+        <Button
+          type="button"
+          className="bg-transparent"
+          onClick={() => onCloseModal?.()}
+        >
           Cancel
-        </button>
-        <button type="submit" className="ml-3" disabled={isCreating}>
+        </Button>
+        <Button type="submit" className="ml-3" disabled={isCreating}>
           Add new participant
-        </button>
+        </Button>
       </div>
     </form>
   )

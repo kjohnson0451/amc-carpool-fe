@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useForm, Controller } from "react-hook-form"
 import DatePicker from "@ui/DatePicker"
+import Button from "@ui/Button"
 import useCreateTrip from "@hooks/trips/useCreateTrip"
 
 function CreateTripForm({ onCloseModal }) {
@@ -87,10 +88,16 @@ function CreateTripForm({ onCloseModal }) {
       </div>
 
       <div className="mt-6 flex items-center justify-end gap-x-6">
-        <button type="button">Cancel</button>
-        <button type="submit" className="bg-violet-950" disabled={isCreating}>
+        <Button
+          type="button"
+          className="bg-transparent"
+          onClick={() => onCloseModal?.()}
+        >
+          Cancel
+        </Button>
+        <Button type="submit" disabled={isCreating}>
           Submit
-        </button>
+        </Button>
       </div>
     </form>
   )

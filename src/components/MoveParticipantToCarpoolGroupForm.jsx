@@ -3,6 +3,7 @@ import useTrip from "@hooks/trips/useTrip"
 import useMoveParticipantToCarpoolGroup from "@hooks/participants/useMoveParticipantToCarpoolGroup"
 import Input from "@ui/Input"
 import getListOfAllParticipantsFromTrip from "@utils/getListOfAllParticipantsFromTrip"
+import Button from "@ui/Button"
 
 function MoveParticipantToCarpoolGroupForm({ carpoolGroupId, onCloseModal }) {
   const { register, handleSubmit } = useForm()
@@ -37,12 +38,12 @@ function MoveParticipantToCarpoolGroupForm({ carpoolGroupId, onCloseModal }) {
         register={register("name")}
       />
       <div className="mt-3">
-        <button type="button" onClick={() => onCloseModal?.()}>
+        <Button type="button" onClick={() => onCloseModal?.()}>
           Cancel
-        </button>
-        <button type="submit" className="ml-3" disabled={isMoving}>
+        </Button>
+        <Button type="submit" className="ml-3" disabled={isMoving}>
           Add participant
-        </button>
+        </Button>
       </div>
     </form>
   )

@@ -1,11 +1,12 @@
 import CreateTripForm from "@components/CreateTripForm"
 import Modal from "@ui/Modal"
+import Button from "@ui/Button"
 
 function AddTrip() {
   return (
     <Modal>
       <Modal.Open opens="create-trip-form">
-        <button type="button">Add new trip</button>
+        <Button type="button">Add new trip</Button>
       </Modal.Open>
       <Modal.Window name="create-trip-form">
         <CreateTripForm />
