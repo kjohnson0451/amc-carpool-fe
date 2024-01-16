@@ -17,13 +17,13 @@ function CreateTripForm({ onCloseModal }) {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="space-y-12">
-        <div className="border-b border-gray-100/10 pb-12">
+        <div className="border-b border-gray-100/10 pb-8">
           <h2 className="text-base font-semibold leading-7 text-gray-100">
             Add new trip
           </h2>
 
-          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-            <div className="sm:col-span-4">
+          <div className="grid grid-cols-1 gap-x-6 gap-y-4">
+            <div className="col-span-4">
               <label
                 htmlFor="name"
                 className="block text-sm font-medium leading-6 text-gray-100"
@@ -35,7 +35,7 @@ function CreateTripForm({ onCloseModal }) {
               </label>
               <div className="mt-2">
                 <input
-                  className="block w-full rounded-md border-0 bg-gray-900 py-1.5 text-gray-100 ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 bg-gray-900 py-1.5 pl-2 text-sm leading-6 text-gray-100 outline-none ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                   type="text"
                   id="name"
                   autoComplete="off"
@@ -43,7 +43,7 @@ function CreateTripForm({ onCloseModal }) {
                 />
               </div>
             </div>
-            <div className="sm:col-span-4">
+            <div className="col-span-4">
               <label
                 htmlFor="date"
                 className="block text-sm font-medium leading-6 text-gray-100"
@@ -63,7 +63,7 @@ function CreateTripForm({ onCloseModal }) {
                 />
               </div>
             </div>
-            <div className="sm:col-span-4">
+            <div className="col-span-4">
               <label
                 htmlFor="trailhead"
                 className="block text-sm font-medium leading-6 text-gray-100"
@@ -75,7 +75,7 @@ function CreateTripForm({ onCloseModal }) {
               </label>
               <div className="mt-2">
                 <input
-                  className="block w-full rounded-md border-0 bg-gray-900 py-1.5 text-gray-100 ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 bg-gray-900 py-1.5 pl-2 text-sm leading-6 text-gray-100 outline-none ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                   type="text"
                   id="trailhead"
                   autoComplete="off"
