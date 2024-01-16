@@ -16,7 +16,7 @@ function CreateTripForm({ onCloseModal }) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="space-y-12">
+      <div className="w-[300px] space-y-12">
         <div className="border-b border-gray-100/10 pb-8">
           <h2 className="text-base font-semibold leading-7 text-gray-100">
             Add new trip

@@ -30,6 +30,10 @@
   background-color: theme("colors.violet.700");
 }
 
+.react-datepicker-wrapper {
+  display: block;
+}
+
 .react-datepicker__input-container input {
   outline: none;
   line-height: 1.5rem;
