@@ -35,6 +35,10 @@
     text-decoration: underline;
   }
 
+  .icon-button {
+    padding: 0.3rem !important;
+  }
+
   h1 {
     min-height: 48px;
     font-size: 32px;

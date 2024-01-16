@@ -10,7 +10,7 @@ function IconButton({
   return (
     <Button
       type={type}
-      className={`${className} px-1.5 py-1.5`}
+      className={`${className} icon-button`}
       onClick={onClick}
       disabled={disabled}
     >
