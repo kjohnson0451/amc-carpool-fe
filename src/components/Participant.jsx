@@ -70,7 +70,7 @@ function Participant({ participant }) {
           })
         }
       />
-      <span className="w-[29px]">
+      <div>
         <IconButton
           onClick={() => {
             removeParticipantFromCarpoolGroup(participant.id)
@@ -79,17 +79,19 @@ function Participant({ participant }) {
         >
           <HiMinus />
         </IconButton>
-      </span>
-      <Button
-        className="w-[87px]"
-        type="button"
-        onClick={() => {
-          deleteParticipant(participant.id)
-        }}
-        disabled={isDeleting}
-      >
-        Delete
-      </Button>
+      </div>
+
+      <div>
+        <Button
+          type="button"
+          onClick={() => {
+            deleteParticipant(participant.id)
+          }}
+          disabled={isDeleting}
+        >
+          Delete
+        </Button>
+      </div>
     </div>
   )
 }
