@@ -2,7 +2,7 @@ import { format, parseISO } from "date-fns"
 import useDeleteTrip from "@hooks/trips/useDeleteTrip"
 import pluralize from "pluralize"
 import { Link } from "react-router-dom"
-import Button from "@ui/Button"
+import ConfirmDeleteModal from "@ui/ConfirmDeleteModal"
 
 function TripListEntry({ trip, index }) {
   const { mutate: deleteTrip, isPending: isDeleting } = useDeleteTrip()
@@ -33,17 +33,19 @@ function TripListEntry({ trip, index }) {
             trip?.totalParticipantCount,
           )}`}
         </span>
-        <span className="col-start-2 self-center lg:col-start-5">
-          <Button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault()
-              deleteTrip(trip.id)
-            }}
+        {/* eslint-disable-next-line max-len */}
+        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+        <span
+          onClick={(e) => {
+            e.preventDefault()
+          }}
+          className="col-start-2 self-center lg:col-start-5"
+        >
+          <ConfirmDeleteModal
+            resourceName="Trip"
+            onConfirm={() => deleteTrip(trip.id)}
             disabled={isDeleting}
-          >
-            Delete
-          </Button>
+          />
         </span>
       </div>
     </Link>

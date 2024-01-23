@@ -1,7 +1,7 @@
 import Participant from "@components/Participant"
 import MoveParticipantToTrip from "@components/MoveParticipantToTrip"
 import useDeleteCarpoolGroup from "@hooks/carpoolGroups/useDeleteCarpoolGroup"
-import Button from "@ui/Button"
+import ConfirmDeleteModal from "@ui/ConfirmDeleteModal"
 
 function CarpoolGroup({ id, participants, index, isUngrouped }) {
   const { mutate: deleteCarpoolGroup, isPending: isDeleting } =
@@ -23,15 +23,11 @@ function CarpoolGroup({ id, participants, index, isUngrouped }) {
     >
       <div className="flex justify-between">
         <h3>{header}</h3>
-        <Button
-          type="button"
-          onClick={() => {
-            deleteCarpoolGroup(id)
-          }}
+        <ConfirmDeleteModal
+          resourceName="Carpool Group"
+          onConfirm={() => deleteCarpoolGroup(id)}
           disabled={isDeleting}
-        >
-          Delete
-        </Button>
+        />
       </div>
       {participants.map((participant) => (
         <Participant participant={participant} key={participant.id} />

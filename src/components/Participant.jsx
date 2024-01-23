@@ -4,7 +4,7 @@ import useUpdateParticipant from "@hooks/participants/useUpdateParticipant"
 import useDeleteParticipant from "@hooks/participants/useDeleteParticipant"
 import useRemoveParticipantFromCarpoolGroup from "@hooks/participants/useRemoveParticipantFromCarpoolGroup"
 import IconButton from "@ui/IconButton"
-import Button from "@ui/Button"
+import ConfirmDeleteModal from "@ui/ConfirmDeleteModal"
 
 function Participant({ participant }) {
   const { mutate: updateParticipant } = useUpdateParticipant()
@@ -82,15 +82,11 @@ function Participant({ participant }) {
       </div>
 
       <div>
-        <Button
-          type="button"
-          onClick={() => {
-            deleteParticipant(participant.id)
-          }}
+        <ConfirmDeleteModal
+          resourceName="Participant"
+          onConfirm={() => deleteParticipant(participant.id)}
           disabled={isDeleting}
-        >
-          Delete
-        </Button>
+        />
       </div>
     </div>
   )
