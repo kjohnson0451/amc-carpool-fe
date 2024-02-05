@@ -3,7 +3,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { createParticipantAndAddToTrip } from "@services/participants/api"
 import QUERY_KEYS from "@config/queryKeys"
 
-const useCreateParticipantAndAddToTrip = (reset) => {
+const useCreateParticipantAndAddToTrip = ({ reset, onCloseModal }) => {
   const { tripId } = useParams()
   const queryClient = useQueryClient()
   const queryKey = [QUERY_KEYS.TRIPS, QUERY_KEYS.TRIP_DETAILS, tripId]
@@ -12,7 +12,8 @@ const useCreateParticipantAndAddToTrip = (reset) => {
       createParticipantAndAddToTrip({ tripId, participantData }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey })
-      reset()
+      reset?.()
+      onCloseModal?.()
     },
   })
 }
