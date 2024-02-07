@@ -1,0 +1,26 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Parameters": {
+    "GitHubAccessToken": {
+      "Type": "String",
+      "Description": "GitHub access token"
+    }
+  },
+  "Resources": {
+    "AmplifyApp": {
+      "Type": "AWS::Amplify::App",
+      "Properties": {
+        "Name": "amc-carpool-fe",
+        "Repository": "https://github.com/kjohnson0451/amc-carpool-fe",
+        "AccessToken": { "Ref": "GitHubAccessToken" }
+      }
+    },
+    "AmplifyBranch": {
+      "Type": "AWS::Amplify::Branch",
+      "Properties": {
+        "AppId": { "Fn::GetAtt": ["AmplifyApp", "AppId"] },
+        "BranchName": "main"
+      }
+    }
+  }
+}
