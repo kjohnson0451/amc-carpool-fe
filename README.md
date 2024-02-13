@@ -14,7 +14,7 @@ The AMC Carpool Frontend is a web app specifically crafted for hiking club event
 
 1. Deploy a developer instance of [amc-carpool-api](https://github.com/kjohnson0451/amc-carpool-api)
 
-Follow the instructions provided in the README.
+Follow the instructions provided in the README in the above repository.
 
 2. Clone this Repository
 
