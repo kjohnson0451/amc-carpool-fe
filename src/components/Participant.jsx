@@ -1,5 +1,5 @@
 import { HiMinus } from "react-icons/hi"
-import EditableField from "@ui/EditableField"
+import EditInPlace from "@ui/EditInPlace"
 import useUpdateParticipant from "@hooks/participants/useUpdateParticipant"
 import useDeleteParticipant from "@hooks/participants/useDeleteParticipant"
 import useRemoveParticipantFromCarpoolGroup from "@hooks/participants/useRemoveParticipantFromCarpoolGroup"
@@ -15,7 +15,7 @@ function Participant({ participant }) {
 
   return (
     <div className="mt-2 grid grid-cols-2 rounded-md border border-stone-600 p-1">
-      <EditableField
+      <EditInPlace
         label="Participant name"
         value={participant.name}
         mutate={updateParticipant}
@@ -26,7 +26,7 @@ function Participant({ participant }) {
           })
         }
       />
-      <EditableField
+      <EditInPlace
         label="Status"
         value={participant.status}
         type="text"
@@ -37,7 +37,7 @@ function Participant({ participant }) {
           })
         }
       />
-      <EditableField
+      <EditInPlace
         label="Departure location"
         value={participant.departureLocation}
         type="text"
@@ -48,7 +48,7 @@ function Participant({ participant }) {
           })
         }
       />
-      <EditableField
+      <EditInPlace
         label="Email"
         value={participant.email}
         type="text"
@@ -59,7 +59,7 @@ function Participant({ participant }) {
           })
         }
       />
-      <EditableField
+      <EditInPlace
         label="Phone"
         value={participant.phone}
         type="text"

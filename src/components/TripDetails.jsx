@@ -4,7 +4,7 @@ import useUpdateTrip from "@hooks/trips/useUpdateTrip"
 import useCreateCarpoolGroup from "@hooks/carpoolGroups/useCreateCarpoolGroup"
 import CarpoolGroup from "@components/CarpoolGroup"
 import AddParticipant from "@components/AddParticipant"
-import EditableField from "@ui/EditableField"
+import EditInPlace from "@ui/EditInPlace"
 import Button from "@ui/Button"
 
 function TripDetails() {
@@ -26,7 +26,7 @@ function TripDetails() {
   return (
     <>
       <div className="lg:grid lg:grid-cols-3">
-        <EditableField
+        <EditInPlace
           label="Trip name"
           value={name}
           type="text"
@@ -34,7 +34,7 @@ function TripDetails() {
             updateTrip({ tripId, tripData: { name: editedValue } })
           }
         />
-        <EditableField
+        <EditInPlace
           label="Date"
           value={date}
           type="date"
@@ -42,7 +42,7 @@ function TripDetails() {
             updateTrip({ tripId, tripData: { date: editedValue } })
           }
         />
-        <EditableField
+        <EditInPlace
           label="Trailhead"
           value={trailhead}
           type="text"

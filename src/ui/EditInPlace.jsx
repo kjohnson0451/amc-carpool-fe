@@ -1,6 +1,6 @@
 import { FaEdit } from "react-icons/fa"
 
-function EditableField({ label, value }) {
+function EditInPlace({ label, value }) {
   return (
     <div className="flex items-center">
       <span className="mr-1 whitespace-nowrap">{label}: </span>
@@ -12,4 +12,4 @@ function EditableField({ label, value }) {
   )
 }
 
-export default EditableField
+export default EditInPlace
