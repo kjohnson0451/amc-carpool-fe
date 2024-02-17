@@ -7,9 +7,14 @@ import useCreateTrip from "@hooks/trips/useCreateTrip"
 
 function CreateTripForm({ onCloseModal }) {
   const { register, handleSubmit, reset, control } = useForm()
+
+  function onSuccess() {
+    reset()
+    onCloseModal()
+  }
+
   const { mutate: createTrip, isPending: isCreating } = useCreateTrip({
-    reset,
-    onCloseModal,
+    onSuccess,
   })
 
   function onSubmit(data) {

@@ -6,11 +6,14 @@ import useCreateParticipantAndAddToTrip from "@hooks/participants/useCreateParti
 
 function CreateParticipantForm({ onCloseModal }) {
   const { register, handleSubmit, reset } = useForm()
+
+  function onSuccess() {
+    reset()
+    onCloseModal()
+  }
+
   const { mutate: createTrip, isPending: isCreating } =
-    useCreateParticipantAndAddToTrip({
-      reset,
-      onCloseModal,
-    })
+    useCreateParticipantAndAddToTrip({ onSuccess })
 
   function onSubmit(data) {
     createTrip(data)
