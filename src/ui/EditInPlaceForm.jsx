@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
+import { useEffect, useRef } from "react"
 import { useForm } from "react-hook-form"
 import Button from "@ui/Button"
 import useUpdateTrip from "@hooks/trips/useUpdateTrip"
@@ -18,9 +19,7 @@ function EditInPlaceForm({
   resourceId,
   onCloseModal,
 }) {
-  const { register, handleSubmit, reset } = useForm({
-    defaultValues: { name: value },
-  })
+  const { register, handleSubmit, reset } = useForm()
 
   function onSuccess() {
     reset()
@@ -36,6 +35,13 @@ function EditInPlaceForm({
   const { mutate: updateResource, isPending: isUpdating } = updateHook({
     onSuccess,
   })
+
+  const inputEl = useRef(null)
+
+  useEffect(() => {
+    inputEl.current.value = value
+    inputEl.current.focus()
+  }, [value])
 
   function onSubmit(data) {
     switch (resourceType) {
@@ -74,6 +80,7 @@ function EditInPlaceForm({
                   id="name"
                   autoComplete="off"
                   {...register("name")}
+                  ref={inputEl}
                 />
               </div>
             </div>
