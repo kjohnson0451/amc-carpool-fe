@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom"
 import useTrip from "@hooks/trips/useTrip"
-import useUpdateTrip from "@hooks/trips/useUpdateTrip"
 import useCreateCarpoolGroup from "@hooks/carpoolGroups/useCreateCarpoolGroup"
 import CarpoolGroup from "@components/CarpoolGroup"
 import AddParticipant from "@components/AddParticipant"
@@ -10,7 +9,6 @@ import Button from "@ui/Button"
 function TripDetails() {
   const { tripId } = useParams()
   const { data: trip, isLoading, isError } = useTrip()
-  const { mutate: updateTrip } = useUpdateTrip()
   const { mutate: createCarpoolGroup } = useCreateCarpoolGroup()
 
   if (isLoading) {
@@ -22,6 +20,7 @@ function TripDetails() {
   }
 
   const { name, date, trailhead, Participants, CarpoolGroups } = trip
+  const resourceType = "trip"
 
   return (
     <>
@@ -30,25 +29,22 @@ function TripDetails() {
           label="Trip name"
           value={name}
           type="text"
-          onUpdate={(editedValue) =>
-            updateTrip({ tripId, tripData: { name: editedValue } })
-          }
+          resourceType={resourceType}
+          resourceId={tripId}
         />
         <EditInPlace
           label="Date"
           value={date}
           type="date"
-          onUpdate={(editedValue) =>
-            updateTrip({ tripId, tripData: { date: editedValue } })
-          }
+          resourceType={resourceType}
+          resourceId={tripId}
         />
         <EditInPlace
           label="Trailhead"
           value={trailhead}
           type="text"
-          onUpdate={(editedValue) =>
-            updateTrip({ tripId, tripData: { trailhead: editedValue } })
-          }
+          resourceType={resourceType}
+          resourceId={tripId}
         />
       </div>
       <div className="mt-2 flex">

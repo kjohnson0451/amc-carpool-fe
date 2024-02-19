@@ -3,7 +3,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { updateParticipant } from "@services/participants/api"
 import QUERY_KEYS from "@config/queryKeys"
 
-const useUpdateParticipant = () => {
+const useUpdateParticipant = ({ onSuccess }) => {
   const { tripId } = useParams()
   const queryClient = useQueryClient()
   const queryKey = [QUERY_KEYS.TRIPS, QUERY_KEYS.TRIP_DETAILS, tripId]
@@ -11,6 +11,7 @@ const useUpdateParticipant = () => {
     mutationFn: updateParticipant,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey })
+      onSuccess?.()
     },
   })
 }
