@@ -9,7 +9,7 @@ import {
 import { createPortal } from "react-dom"
 import { HiXMark } from "react-icons/hi2"
 import IconButton from "@ui/IconButton"
-import useOutsideClick from "../hooks/ui/useOutsideClick"
+import useOutsideClick from "@hooks/ui/useOutsideClick"
 
 const ModalContext = createContext()
 
