@@ -23,13 +23,13 @@ function DatePicker({ id, onChange }) {
     onChange(startDate)
   }, [onChange, startDate])
 
-  const ExampleCustomInput = forwardRef(CustomInput)
+  const CustomInputInstance = forwardRef(CustomInput)
   return (
     <DatePickerReact
       id={id}
       selected={startDate}
       onChange={(date) => setStartDate(date)}
-      customInput={<ExampleCustomInput />}
+      customInput={<CustomInputInstance />}
     />
   )
 }
