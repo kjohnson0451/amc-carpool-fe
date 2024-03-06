@@ -2,7 +2,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
 import { useEffect, useRef } from "react"
-import { useForm } from "react-hook-form"
+import { Controller, useForm } from "react-hook-form"
+import DatePicker from "@ui/DatePicker"
 import Button from "@ui/Button"
 import useUpdateTrip from "@hooks/trips/useUpdateTrip"
 import useUpdateParticipant from "@hooks/participants/useUpdateParticipant"
@@ -14,12 +15,14 @@ const updateHooks = {
 
 function EditInPlaceForm({
   label,
+  id,
   value,
+  type,
   resourceType,
   resourceId,
   onCloseModal,
 }) {
-  const { register, handleSubmit, reset } = useForm()
+  const { register, handleSubmit, reset, control } = useForm()
 
   function onSuccess() {
     reset()
@@ -37,10 +40,13 @@ function EditInPlaceForm({
   })
 
   const inputEl = useRef(null)
+  const { ref, ...rest } = register(id)
 
   useEffect(() => {
-    inputEl.current.value = value
-    inputEl.current.focus()
+    if (inputEl.current) {
+      inputEl.current.value = value
+      inputEl.current.focus()
+    }
   }, [value])
 
   function onSubmit(data) {
@@ -65,7 +71,7 @@ function EditInPlaceForm({
           <div className="grid grid-cols-1 gap-x-6 gap-y-4">
             <div className="col-span-4">
               <label
-                htmlFor="name"
+                htmlFor={id}
                 className="block text-sm font-medium leading-6 text-gray-100"
                 onClick={(e) => {
                   e.preventDefault()
@@ -74,14 +80,34 @@ function EditInPlaceForm({
                 {label}
               </label>
               <div className="mt-2">
-                <input
-                  className="block w-full rounded-md border-0 bg-gray-900 py-1.5 pl-2 text-sm leading-6 text-gray-100 outline-none ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
-                  type="text"
-                  id="name"
-                  autoComplete="off"
-                  {...register("name")}
-                  ref={inputEl}
-                />
+                {type === "text" && (
+                  <input
+                    className="block w-full rounded-md border-0 bg-gray-900 py-1.5 pl-2 text-sm leading-6 text-gray-100 outline-none ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                    type="text"
+                    id={id}
+                    autoComplete="off"
+                    {...rest}
+                    ref={(e) => {
+                      ref(e)
+                      inputEl.current = e
+                    }}
+                  />
+                )}
+                {type === "date" && (
+                  <Controller
+                    control={control}
+                    name={id}
+                    render={({ field: { onChange, dateValue } }) => (
+                      <DatePicker
+                        className="block w-full rounded-md border-0 bg-gray-900 py-1.5 pl-2 text-sm leading-6 text-gray-100 outline-none ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                        id={id}
+                        onChange={onChange}
+                        value={dateValue}
+                        autoComplete="off"
+                      />
+                    )}
+                  />
+                )}
               </div>
             </div>
           </div>

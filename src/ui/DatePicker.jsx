@@ -4,10 +4,14 @@ import DatePickerReact from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import "../react-datepicker-override.css"
 
-function CustomInput({ value, onChange, onClick }, ref) {
+function CustomInput(
+  { className, autoComplete, value, onChange, onClick },
+  ref,
+) {
   return (
     <input
-      className="block w-full rounded-md border-0 bg-gray-900 py-1.5 pl-2 text-sm leading-6 text-gray-100 outline-none ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+      className={className}
+      autoComplete={autoComplete}
       value={value}
       onChange={onChange}
       onClick={onClick}
@@ -16,8 +20,14 @@ function CustomInput({ value, onChange, onClick }, ref) {
   )
 }
 
-function DatePicker({ id, onChange }) {
-  const [startDate, setStartDate] = useState(null)
+function DatePicker({
+  className = "",
+  id,
+  autoComplete = "on",
+  value = null,
+  onChange,
+}) {
+  const [startDate, setStartDate] = useState(value)
 
   useEffect(() => {
     onChange(startDate)
@@ -29,7 +39,13 @@ function DatePicker({ id, onChange }) {
       id={id}
       selected={startDate}
       onChange={(date) => setStartDate(date)}
-      customInput={<CustomInputInstance />}
+      customInput={
+        // eslint-disable-next-line react/jsx-wrap-multilines
+        <CustomInputInstance
+          className={className}
+          autoComplete={autoComplete}
+        />
+      }
     />
   )
 }

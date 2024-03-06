@@ -2,7 +2,7 @@ import { FaEdit } from "react-icons/fa"
 import Modal from "@ui/Modal"
 import EditInPlaceForm from "@ui/EditInPlaceForm"
 
-function EditInPlace({ label, value, resourceId, resourceType }) {
+function EditInPlace({ label, id, value, type, resourceId, resourceType }) {
   return (
     <div className="flex items-center">
       <span className="mr-1 whitespace-nowrap">{label}: </span>
@@ -18,7 +18,9 @@ function EditInPlace({ label, value, resourceId, resourceType }) {
         <Modal.Window name="create-trip-form">
           <EditInPlaceForm
             label={label}
+            id={id}
             value={value}
+            type={type}
             resourceType={resourceType}
             resourceId={resourceId}
           />

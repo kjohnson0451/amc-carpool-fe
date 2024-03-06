@@ -27,6 +27,7 @@ function TripDetails() {
       <div className="lg:grid lg:grid-cols-3">
         <EditInPlace
           label="Trip name"
+          id="name"
           value={name}
           type="text"
           resourceType={resourceType}
@@ -34,6 +35,7 @@ function TripDetails() {
         />
         <EditInPlace
           label="Date"
+          id="date"
           value={date}
           type="date"
           resourceType={resourceType}
@@ -41,6 +43,7 @@ function TripDetails() {
         />
         <EditInPlace
           label="Trailhead"
+          id="trailhead"
           value={trailhead}
           type="text"
           resourceType={resourceType}
