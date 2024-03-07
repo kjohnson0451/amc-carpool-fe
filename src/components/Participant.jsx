@@ -17,6 +17,7 @@ function Participant({ participant }) {
     <div className="mt-2 grid grid-cols-2 rounded-md border border-stone-600 p-1">
       <EditInPlace
         label="Participant name"
+        id="name"
         value={participant.name}
         type="text"
         resourceType={resourceType}
@@ -24,6 +25,7 @@ function Participant({ participant }) {
       />
       <EditInPlace
         label="Status"
+        id="status"
         value={participant.status}
         type="text"
         resourceType={resourceType}
@@ -31,6 +33,7 @@ function Participant({ participant }) {
       />
       <EditInPlace
         label="Departure location"
+        id="departureLocation"
         value={participant.departureLocation}
         type="text"
         resourceType={resourceType}
@@ -38,6 +41,7 @@ function Participant({ participant }) {
       />
       <EditInPlace
         label="Email"
+        id="email"
         value={participant.email}
         type="text"
         resourceType={resourceType}
@@ -45,6 +49,7 @@ function Participant({ participant }) {
       />
       <EditInPlace
         label="Phone"
+        id="phone"
         value={participant.phone}
         type="text"
         resourceType={resourceType}
