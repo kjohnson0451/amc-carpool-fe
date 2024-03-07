@@ -65,7 +65,12 @@ function CreateTripForm({ onCloseModal }) {
                   control={control}
                   name="date"
                   render={({ field: { onChange, value } }) => (
-                    <DatePicker id="date" onChange={onChange} value={value} />
+                    <DatePicker
+                      className="block w-full rounded-md border-0 bg-gray-900 py-1.5 pl-2 text-sm leading-6 text-gray-100 outline-none ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                      id="date"
+                      onChange={onChange}
+                      value={value}
+                    />
                   )}
                 />
               </div>
