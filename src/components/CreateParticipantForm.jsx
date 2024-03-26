@@ -58,13 +58,14 @@ function CreateParticipantForm({ onCloseModal }) {
                 Status
               </label>
               <div className="mt-2">
-                <input
-                  className="block w-full rounded-md border-0 bg-gray-900 py-1.5 pl-2 text-sm leading-6 text-gray-100 outline-none ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
-                  type="text"
+                <select
+                  className="block w-full rounded-md border-0 bg-gray-900 py-2.5 pl-2 text-sm leading-6 text-gray-100 outline-none ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                   id="status"
-                  autoComplete="off"
                   {...register("status")}
-                />
+                >
+                  <option value="N">Need Ride</option>
+                  <option value="D">Can Drive</option>
+                </select>
               </div>
             </div>
             <div className="col-span-4">

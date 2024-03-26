@@ -27,7 +27,7 @@ function Participant({ participant }) {
         label="Status"
         id="status"
         value={participant.status}
-        type="text"
+        type="status"
         resourceType={resourceType}
         resourceId={participant.id}
       />

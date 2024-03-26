@@ -108,6 +108,20 @@ function EditInPlaceForm({
                     )}
                   />
                 )}
+                {type === "status" && (
+                  <select
+                    className="block w-full rounded-md border-0 bg-gray-900 py-2.5 pl-2 text-sm leading-6 text-gray-100 outline-none ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                    id={id}
+                    {...rest}
+                    ref={(e) => {
+                      ref(e)
+                      inputEl.current = e
+                    }}
+                  >
+                    <option value="N">Need Ride</option>
+                    <option value="D">Can Drive</option>
+                  </select>
+                )}
               </div>
             </div>
           </div>
