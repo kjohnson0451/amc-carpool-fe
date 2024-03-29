@@ -37,7 +37,7 @@ export const updateTrip = async ({ tripId, tripData }) => {
 
 export const deleteTrip = async (tripId) => {
   try {
-    await axiosInstance.delete(`/trips/${tripId}`)
+    await axiosInstance.delete(`/tripsasdf/${tripId}`)
   } catch (error) {
     throw new Error("Error deleting trip")
   }

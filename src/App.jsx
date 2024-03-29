@@ -31,7 +31,7 @@ function App() {
         position="top-center"
         gutter={12}
         containerStype={{ margin: "8px" }}
-        toatOptions={{
+        toastOptions={{
           success: { duration: 3000 },
           error: { duration: 5000 },
           style: { fontSize: "16px", maxWidth: "500px", padding: "16px 24px" },
