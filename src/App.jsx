@@ -4,6 +4,7 @@ import Trips from "@pages/Trips"
 import Trip from "@pages/Trip"
 import PageNotFound from "@pages/PageNotFound"
 import "./App.css"
+import { Toaster } from "react-hot-toast"
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,6 +25,16 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
+      <Toaster
+        position="top-center"
+        gutter={12}
+        containerStype={{ margin: "8px" }}
+        toatOptions={{
+          success: { duration: 3000 },
+          error: { duration: 5000 },
+          style: { fontSize: "16px", maxWidth: "500px", padding: "16px 24px" },
+        }}
+      />
     </QueryClientProvider>
   )
 }

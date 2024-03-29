@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { updateTrip } from "@services/trips/api"
 import QUERY_KEYS from "@config/queryKeys"
+import toast from "react-hot-toast"
 
 const useUpdateTrip = ({ onSuccess }) => {
   const { tripId } = useParams()
@@ -12,7 +13,9 @@ const useUpdateTrip = ({ onSuccess }) => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey })
       onSuccess?.()
+      toast.success("Trip successfully updated")
     },
+    onError: (err) => toast.error(err.message),
   })
 }
 

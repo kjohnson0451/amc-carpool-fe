@@ -5,6 +5,7 @@ import CarpoolGroup from "@components/CarpoolGroup"
 import AddParticipant from "@components/AddParticipant"
 import EditInPlace from "@ui/EditInPlace"
 import Button from "@ui/Button"
+import Spinner from "@ui/Spinner"
 
 function TripDetails() {
   const { tripId } = useParams()
@@ -12,7 +13,7 @@ function TripDetails() {
   const { mutate: createCarpoolGroup } = useCreateCarpoolGroup()
 
   if (isLoading) {
-    return <p>Loading...</p>
+    return <Spinner />
   }
 
   if (isError) {

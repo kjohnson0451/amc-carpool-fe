@@ -1,12 +1,13 @@
 import useTrips from "@hooks/trips/useTrips"
 
 import TripListEntry from "@components/TripListEntry"
+import Spinner from "@ui/Spinner"
 
 function TripList() {
   const { data: trips, isLoading, isError } = useTrips()
 
   if (isLoading) {
-    return <p>Loading...</p>
+    return <Spinner />
   }
 
   if (isError) {
