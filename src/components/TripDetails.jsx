@@ -10,7 +10,8 @@ import Spinner from "@ui/Spinner"
 function TripDetails() {
   const { tripId } = useParams()
   const { data: trip, isLoading, isError } = useTrip()
-  const { mutate: createCarpoolGroup } = useCreateCarpoolGroup()
+  const { mutate: createCarpoolGroup, isPending: isCreating } =
+    useCreateCarpoolGroup()
 
   if (isLoading) {
     return <Spinner />
@@ -52,7 +53,11 @@ function TripDetails() {
         />
       </div>
       <div className="mt-2 flex">
-        <Button type="button" onClick={createCarpoolGroup}>
+        <Button
+          type="button"
+          onClick={createCarpoolGroup}
+          disabled={isCreating}
+        >
           Add Carpool Group
         </Button>
         <span className="ml-2">
