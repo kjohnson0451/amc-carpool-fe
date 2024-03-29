@@ -6,6 +6,7 @@ import PageNotFound from "@pages/PageNotFound"
 import "./App.css"
 import { Toaster } from "react-hot-toast"
 
+// Create a React Query client
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -16,6 +17,7 @@ const queryClient = new QueryClient({
 
 function App() {
   return (
+    // Provide the React Query client to my app
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
