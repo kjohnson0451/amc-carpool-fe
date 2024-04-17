@@ -3,7 +3,7 @@ import { HiPlus } from "react-icons/hi"
 import IconButton from "@ui/IconButton"
 import Modal from "@ui/Modal"
 
-function MoveParticipantToTrip({ carpoolGroupId }) {
+function MoveParticipantToCarpoolGroup({ carpoolGroupId }) {
   return (
     <Modal>
       <Modal.Open opens="move-participant-to-carpool-group-form">
@@ -18,4 +18,4 @@ function MoveParticipantToTrip({ carpoolGroupId }) {
   )
 }
 
-export default MoveParticipantToTrip
+export default MoveParticipantToCarpoolGroup

@@ -1,5 +1,5 @@
 import Participant from "@components/Participant"
-import MoveParticipantToTrip from "@components/MoveParticipantToTrip"
+import MoveParticipantToCarpoolGroup from "@components/MoveParticipantToCarpoolGroup"
 import useDeleteCarpoolGroup from "@hooks/carpoolGroups/useDeleteCarpoolGroup"
 import ConfirmDeleteModal from "@ui/ConfirmDeleteModal"
 
@@ -36,7 +36,7 @@ function CarpoolGroup({ id, participants, index, isUngrouped }) {
       ))}
       {!isUngrouped && (
         <div className="mt-2">
-          <MoveParticipantToTrip carpoolGroupId={id} />
+          <MoveParticipantToCarpoolGroup carpoolGroupId={id} />
         </div>
       )}
     </div>
