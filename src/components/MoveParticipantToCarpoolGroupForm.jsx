@@ -5,6 +5,10 @@ import Input from "@ui/Input"
 import getListOfAllParticipantsFromTrip from "@utils/getListOfAllParticipantsFromTrip"
 import Button from "@ui/Button"
 
+// Form to move participant to a carpool group.
+// This is a rough implement. You have to manually type or paste the name
+// of the participant in question. There's no drop down and no autocomplete.
+
 function MoveParticipantToCarpoolGroupForm({ carpoolGroupId, onCloseModal }) {
   const { register, handleSubmit } = useForm()
   const { data: trip, isLoading, isError } = useTrip()
