@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom"
 
+// The "Main Layout" I use for the Trip List page (pages/Trips.jsx)
+// and the Individual Trip page (pages/Trips.jsx)
+//
+// I can pass in a header and optionally the previous page.
+
 function MainLayout({ header, previousPage = {}, children }) {
   const { label: previousPageLabel, to: previousPageTo } = previousPage
 

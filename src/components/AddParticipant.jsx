@@ -2,6 +2,8 @@ import CreateParticipantForm from "@components/CreateParticipantForm"
 import Modal from "@ui/Modal"
 import Button from "@ui/Button"
 
+// The button and modal for adding a new participant to a trip.
+
 function AddParticipant() {
   return (
     <Modal>

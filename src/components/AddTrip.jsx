@@ -2,6 +2,8 @@ import CreateTripForm from "@components/CreateTripForm"
 import Modal from "@ui/Modal"
 import Button from "@ui/Button"
 
+// Button and modal to add trip
+
 function AddTrip() {
   return (
     <Modal>

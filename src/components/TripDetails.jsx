@@ -7,6 +7,8 @@ import EditInPlace from "@ui/EditInPlace"
 import Button from "@ui/Button"
 import Spinner from "@ui/Spinner"
 
+// The main component for an individual trip
+
 function TripDetails() {
   const { tripId } = useParams()
   const { data: trip, isLoading, isError } = useTrip()

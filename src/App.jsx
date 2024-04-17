@@ -19,6 +19,7 @@ function App() {
   return (
     // Provide the React Query client to my app
     <QueryClientProvider client={queryClient}>
+      {/* Declare my routes */}
       <BrowserRouter>
         <Routes>
           <Route index element={<Trips />} />
@@ -27,6 +28,7 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
+      {/* A Toast is a temporary notification. Declare my global Toast options here */}
       <Toaster
         position="top-center"
         gutter={12}

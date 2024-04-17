@@ -3,6 +3,8 @@ import MoveParticipantToTrip from "@components/MoveParticipantToTrip"
 import useDeleteCarpoolGroup from "@hooks/carpoolGroups/useDeleteCarpoolGroup"
 import ConfirmDeleteModal from "@ui/ConfirmDeleteModal"
 
+// The main component for an individual carpool group
+
 function CarpoolGroup({ id, participants, index, isUngrouped }) {
   const { mutate: deleteCarpoolGroup, isPending: isDeleting } =
     useDeleteCarpoolGroup()

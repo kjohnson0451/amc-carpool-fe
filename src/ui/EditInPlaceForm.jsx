@@ -29,6 +29,8 @@ function EditInPlaceForm({
     onCloseModal()
   }
 
+  // So far, an EditInPlaceForm will serve to update either a "trip" or a "participant".
+  // Here, we assign the update hook depending on which one.
   const updateHook = updateHooks[resourceType]
 
   if (updateHook === undefined) {
@@ -39,9 +41,13 @@ function EditInPlaceForm({
     onSuccess,
   })
 
+  // A reference for the input element is assigned to inputEl in the JSX
+  // a number of lines below.
   const inputEl = useRef(null)
   const { ref, ...rest } = register(id)
 
+  // Place the current value of the EditInPlace into the input element
+  // and then put the input element into focus.
   useEffect(() => {
     if (inputEl.current) {
       inputEl.current.value = value
