@@ -29,6 +29,8 @@ function DatePicker({
 }) {
   const [startDate, setStartDate] = useState(value)
 
+  // In order to sync the selected date with the react hook form of the parent
+  // component, we must use a useEffect
   useEffect(() => {
     onChange(startDate)
   }, [onChange, startDate])
